@@ -3,4 +3,5 @@ project(CPP_project)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(CPP_project src/main.cpp)
+set(SOURCES src/main.cpp)
+add_executable(executable ${SOURCES})

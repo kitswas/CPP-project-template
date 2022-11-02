@@ -23,3 +23,13 @@ Then execute the following command to run the program:
 cd build
 .\executable
 ```
+
+## Generating Documentation
+
+This project uses [Doxygen](https://www.doxygen.nl/index.html) to generate documentation.  
+If Doxygen is available on your system,  
+You can generate the documentation by running the following command:
+
+```bash
+doxygen Doxyfile
+```

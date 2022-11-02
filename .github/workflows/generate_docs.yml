@@ -33,6 +33,9 @@ jobs:
     - name: Install doxygen
       run: sudo apt-get install -y doxygen
       
+    - name: Remove existing files
+      run: rm -rf docs
+      
     - name: Generate documentation
       run: doxygen Doxyfile
       

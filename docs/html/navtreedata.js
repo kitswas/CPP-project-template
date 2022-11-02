@@ -23,6 +23,11 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "My Project", "index.html", [
+    [ "C_Plus_Plus Project", "index.html", [
+      [ "Setting up your workspace", "index.html#autotoc_md1", null ],
+      [ "How to run", "index.html#autotoc_md2", null ],
+      [ "Generating Documentation", "index.html#autotoc_md3", null ]
+    ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
@@ -35,7 +40,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"dir_68267d1309a1af8e8297ef4c3efbcdba.html"
+"README_8MD.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

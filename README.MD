@@ -19,14 +19,24 @@ Install extensions for CMake support if prompted.
 If you are using the command line, you can run the following commands:
 
 ```bash
-cmake -S src -B build
+cmake -B build
+cmake --build build --config Debug
 ```
 
-Then execute the following command to run the program:
+Then execute the following commands to run the program:
+
+Windows:
 
 ```bash
 cd build
 .\executable
+```
+
+Linux:
+
+```bash
+cd build
+./executable
 ```
 
 ## Generating Documentation

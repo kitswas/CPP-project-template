@@ -1,5 +1,10 @@
 # C_Plus_Plus Project
 
+This repository is a template I made and personally use to bootstrap my C and C++ projects.  
+
+Feel free to use it. It's licenced under [Unlicence](https://unlicense.org).  
+You will probably want to change the [licence](./LICENCE.MD) after you clone this, though.
+
 ## Setting up your workspace
 
 This project has a [.editorconfig file](https://editorconfig.org/) to enforce project level coding standards.  

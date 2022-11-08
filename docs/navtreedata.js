@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
+  [ "Project Template", "index.html", [
     [ "C_Plus_Plus Project", "index.html", [
       [ "Setting up your workspace", "index.html#autotoc_md1", null ],
       [ "How to run", "index.html#autotoc_md2", null ],

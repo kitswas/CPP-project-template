@@ -1,6 +1,6 @@
 # C_Plus_Plus Project
 
-This repository is a template I made and personally use to bootstrap my C and C++ projects.  
+[This repository](https://github.com/kitswas/CPP_project_template) is a template I made and personally use to bootstrap my C and C++ projects.  
 
 Feel free to use it. It's licenced under [Unlicence](https://unlicense.org).  
 You will probably want to change the [licence](./LICENCE.MD) after you clone this, though.
@@ -27,16 +27,14 @@ Then execute the following commands to run the program:
 
 Windows:
 
-```bash
-cd build
-.\executable
+```cmd
+.\build\executable
 ```
 
 Linux:
 
 ```bash
-cd build
-./executable
+./build/executable
 ```
 
 ## Generating Documentation

@@ -1,6 +1,6 @@
 # C_Plus_Plus Project
 
-[This repository](https://github.com/kitswas/CPP_project_template) is a template I made and personally use to bootstrap my C and C++ projects.  
+[This repository](https://github.com/kitswas/CPP-project-template) is a template I made and personally use to bootstrap my C and C++ projects.  
 
 Feel free to use it. It's licenced under [Unlicence](https://unlicense.org).  
 You will probably want to change the [licence](./LICENCE.MD) after you clone this, though.
@@ -48,5 +48,5 @@ doxygen Doxyfile
 ```
 
 This repository has automated workflow via Github Actions.  
-Documentation is auto-generated and deployed to [Github Pages](https://kitswas.github.io/CPP_project_template/).  
+Documentation is auto-generated and deployed to [Github Pages](https://kitswas.github.io/CPP-project-template/).  
 Disable Actions on your own copy or delete the [workflows](./.github/workflows) folder if you do not want to be billed. This is **not my responsiblity.**

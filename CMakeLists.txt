@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(CPP_project)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CXX_STANDARD_REQUIRED ON) # Without this CXX_STANDARD may fall back to a lower version
 
 # Some compiler flags for GCC and Clang, disable if unwanted
 if("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" OR "${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU") 

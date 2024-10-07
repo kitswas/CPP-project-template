@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['workspace_0',['Setting up your workspace',['../index.html#setting-up-your-workspace',1,'']]]
+  ['template_0',['C-Plus-Plus Project Template',['../index.html',1,'']]],
+  ['to_20run_1',['How to run',['../index.html#how-to-run',1,'']]]
 ];

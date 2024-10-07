@@ -1,0 +1,31 @@
+html {
+	/* override light-mode variables here */
+	/* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
+	--primary-color: #177cc4;
+	--primary-dark-color: #333680;
+	--primary-light-color: #70bde9;
+
+	/* page base colors */
+	--page-background-color: #ffffff;
+	--page-foreground-color: #2f4c53;
+	--page-secondary-foreground-color: #6f888e;
+
+	/* color for all separators on the website: hr, borders, ... */
+	--separator-color: #dedede;
+}
+
+html.dark-mode {
+	/* define dark-mode variable overrides here if you DO use doxygen-awesome-darkmode-toggle.js */
+
+	color-scheme: dark;
+
+	--primary-color: #196fd2;
+	--primary-dark-color: #86b4c4;
+	--primary-light-color: #4758ac;
+
+	--page-background-color: #1f1c1c;
+	--page-foreground-color: #d3ded2;
+	--page-secondary-foreground-color: #859199;
+
+	--separator-color: #3b3838;
+}

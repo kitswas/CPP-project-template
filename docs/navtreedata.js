@@ -25,7 +25,8 @@
 var NAVTREE =
 [
   [ "Project Template", "index.html", [
-    [ "C_Plus_Plus Project", "index.html", "index" ],
+    [ "C-Plus-Plus Project Template", "index.html", "index" ],
+    [ "LICENCE", "licence.html", null ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [

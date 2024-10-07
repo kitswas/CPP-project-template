@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['project_0',['C_Plus_Plus Project',['../index.html',1,'']]]
+  ['licence_0',['LICENCE',['../licence.html',1,'']]],
+  ['licence_2emd_1',['LICENCE.MD',['../LICENCE_8MD.html',1,'']]]
 ];

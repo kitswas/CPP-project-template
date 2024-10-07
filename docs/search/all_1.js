@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['documentation_0',['Generating Documentation',['../index.html#generating-documentation',1,'']]]
+  ['c_20plus_20plus_20project_20template_0',['C-Plus-Plus Project Template',['../index.html',1,'']]]
 ];

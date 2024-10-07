@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['how_20to_20run_0',['How to run',['../index.html#how-to-run',1,'']]]
+  ['generating_20and_20viewing_20documentation_0',['Generating and Viewing Documentation',['../index.html#generating-and-viewing-documentation',1,'']]]
 ];

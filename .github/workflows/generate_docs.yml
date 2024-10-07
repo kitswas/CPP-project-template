@@ -22,23 +22,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
-        submodules: 'true'
+        submodules: 'false'
 
     - name: Print current path
       run: pwd
       
     - name: Print directory contents
       run: ls
-      
-    - name: Setup awesome doxygen
-      run: |
-        cd doxygen-awesome-css
-        git fetch
-        git checkout main
-        git pull
-        cd ..
       
     - name: Install doxygen
       run: |
@@ -54,11 +46,10 @@ jobs:
     - name: Install graphviz
       run: sudo apt-get install graphviz
 
-    - name: Remove existing files
-      run: rm -rf docs
-      
     - name: Generate documentation
-      run: doxygen Doxyfile
+      run: |
+        cmake -B build
+        cmake --build build --target doc
 
     - name: Commit changes
       # if: (git diff HEAD --name-only | wc -l) > 0

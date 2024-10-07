@@ -1,4 +1,4 @@
-# C_Plus_Plus Project
+# C-Plus-Plus Project Template
 
 [This repository](https://github.com/kitswas/CPP-project-template) is a template I made and personally use to bootstrap my C and C++ projects.  
 
@@ -37,16 +37,22 @@ Linux:
 ./build/executable
 ```
 
-## Generating Documentation
+## Generating and Viewing Documentation
 
 This project uses [Doxygen](https://www.doxygen.nl/index.html) to generate documentation.  
 If Doxygen is available on your system,  
-You can generate the documentation by running the following command:
+You can generate the documentation by running the `doc` CMake target.
 
 ```bash
-doxygen Doxyfile
+cmake -B build
+cmake --build build --target doc
 ```
 
-This repository has automated workflow via Github Actions.  
+To get graphs in the documentation, you will need to install [Graphviz](https://graphviz.org/).  
+Set the `HAVE_DOT` option in the Doxyfile to `NO` if you do not have Graphviz installed.
+
+This repository also has an automated workflow to generate documentatation via Github Actions.  
+
+The generated documentation can be viewed at [/docs](./docs/index.html).
 Documentation is auto-generated and deployed to [Github Pages](https://kitswas.github.io/CPP-project-template/).  
 Disable Actions on your own copy or delete the [workflows](./.github/workflows) folder if you do not want to be billed. This is **not my responsiblity.**

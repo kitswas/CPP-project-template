@@ -29,7 +29,7 @@ configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 
 add_custom_target(
 	doc
-	COMMAND rm -rf ${CMAKE_SOURCE_DIR}/docs
+	COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_SOURCE_DIR}/docs
 	COMMAND doxygen ${DOXYFILE_OUT}
 	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 	COMMENT "Generating documentation with Doxygen"

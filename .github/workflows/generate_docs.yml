@@ -6,7 +6,8 @@ on:
   # Triggers the workflow on push events for the main branch
   push:
     branches:
-    - main
+      - main
+      - test
   # Triggers the workflow for pull requests
   pull_request:
   # Allows you to run this workflow manually from the Actions tab

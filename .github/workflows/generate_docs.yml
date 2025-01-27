@@ -22,42 +22,42 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        submodules: 'false'
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
 
-    - name: Print current path
-      run: pwd
-      
-    - name: Print directory contents
-      run: ls
-      
-    - name: Install doxygen
-      run: |
-        sudo apt-get install wget
-        wget https://github.com/doxygen/doxygen/releases/download/Release_1_12_0/doxygen-1.12.0.linux.bin.tar.gz
-        tar -xvf doxygen-1.12.0.linux.bin.tar.gz
-        cd doxygen-1.12.0
-        sudo make install
-        cd ..
-        rm -rf doxygen-1.12.0
-        rm doxygen-1.12.0.linux.bin.tar.gz
+      - name: Print current path
+        run: pwd
 
-    - name: Install graphviz
-      run: sudo apt-get install graphviz
+      - name: Print directory contents
+        run: ls
 
-    - name: Generate documentation
-      run: |
-        cmake -B build
-        cmake --build build --target doc
+      - name: Install doxygen
+        run: |
+          sudo apt-get install wget
+          wget https://github.com/doxygen/doxygen/releases/download/Release_1_13_2/doxygen-1.13.2.linux.bin.tar.gz
+          tar -xvf doxygen-1.13.2.linux.bin.tar.gz
+          cd doxygen-1.13.2
+          sudo make install
+          cd ..
+          rm -rf doxygen-1.13.2
+          rm doxygen-1.13.2.linux.bin.tar.gz
 
-    - name: Commit changes
-      # if: (git diff HEAD --name-only | wc -l) > 0
-      run: |
+      - name: Install graphviz
+        run: sudo apt-get install graphviz
+
+      - name: Generate documentation
+        run: |
+          cmake -B build
+          cmake --build build --target doc
+
+      - name: Commit changes
+        # if: (git diff HEAD --name-only | wc -l) > 0
+        run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add ./docs -f
           git commit -m "Updated the documentation" -v
           git push
-      continue-on-error: true
+        continue-on-error: true

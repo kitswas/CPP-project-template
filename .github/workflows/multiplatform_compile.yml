@@ -1,0 +1,50 @@
+# This is a workflow that compiles a C++ project on all platforms
+name: Multiplatform Compile
+
+on:
+  # Triggers the workflow on push events on all branches
+  push:
+    branches:
+      - "*"
+  # Triggers the workflow for pull requests
+  pull_request:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  compile_and_run:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        build_type: [Debug, Release, RelWithDebInfo, MinSizeRel]
+      fail-fast: false # Continue running other jobs even if one fails
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Print current path
+        run: pwd
+
+      - name: Print directory contents
+        run: ls
+
+      - name: CMake configuration
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -G "Ninja" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+      - name: Print build directory contents
+        run: ls build
+
+      - name: CMake print compile commands
+        run: cat build/compile_commands.json
+
+      - name: Build
+        run: cmake --build build --config ${{ matrix.build_type }}
+
+      - name: Run executable
+        run: ./build/executable

@@ -20,24 +20,31 @@ if(NOT COMMAND target_link_options)
 endif()
 
 
-# 1. Compiler feature tests
+# 1. Feature tests
 include(CheckCXXCompilerFlag)
+include(CheckLinkerFlag)
 check_cxx_compiler_flag("-ftrivial-auto-var-init=zero"    OpenSSF_HARDENING_HAS_TRIVIAL_AUTO_INIT)
 check_cxx_compiler_flag("-fno-delete-null-pointer-checks" OpenSSF_HARDENING_HAS_NO_DELETE_NULL)
-
+check_cxx_compiler_flag("-fhardened"                      OpenSSF_HARDENING_HAS_HARDENED)
+check_cxx_compiler_flag("-fsanitize=undefined"            OpenSSF_HARDENING_HAS_UB_SAN)
+check_linker_flag(CXX "-fsanitize=undefined"              OpenSSF_HARDENING_LINK_HAS_UB_SAN)
 
 # 2. Base hardening flags (C & C++)
 set(OpenSSF_Hardening_FLAGS
 	-Wall
+	-Wextra
+	-Wpedantic
 	-Wformat=2
 	-Wconversion
 	-Wimplicit-fallthrough
+	-Wnull-dereference
 	-Werror=format-security
 	-fstack-clash-protection
 	-fstack-protector-strong
 	-fno-strict-aliasing
 	-fno-strict-overflow
 )
+set(OpenSSF_Hardening_LINK_FLAGS)
 
 if(OpenSSF_HARDENING_HAS_TRIVIAL_AUTO_INIT)
 	list(APPEND OpenSSF_Hardening_FLAGS
@@ -47,6 +54,19 @@ endif()
 if(OpenSSF_HARDENING_HAS_NO_DELETE_NULL)
 	list(APPEND OpenSSF_Hardening_FLAGS
 		-fno-delete-null-pointer-checks
+	)
+endif()
+if(OpenSSF_HARDENING_HAS_HARDENED)
+	list(APPEND OpenSSF_Hardening_FLAGS
+		-fhardened
+	)
+endif()
+if(OpenSSF_HARDENING_HAS_UB_SAN AND OpenSSF_HARDENING_LINK_HAS_UB_SAN)
+	list(APPEND OpenSSF_Hardening_FLAGS
+		-fsanitize=undefined
+	)
+	list(APPEND OpenSSF_Hardening_LINK_FLAGS
+		-fsanitize=undefined
 	)
 endif()
 
@@ -75,7 +95,6 @@ set(OpenSSF_Hardening_C_FLAGS
 
 
 # 5. Linker hardening flags - Platform specific setup
-set(OpenSSF_Hardening_LINK_FLAGS)
 
 # Platform-specific linker flags
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")

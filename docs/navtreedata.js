@@ -26,7 +26,7 @@ var NAVTREE =
 [
   [ "Project Template", "index.html", [
     [ "C-Plus-Plus Project Template", "index.html", "index" ],
-    [ "LICENCE", "licence.html", null ],
+    [ "LICENCE", "md_LICENCE.html", null ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
@@ -44,3 +44,4 @@ var NAVTREEINDEX =
 
 var SYNCONMSG = 'click to disable panel synchronization';
 var SYNCOFFMSG = 'click to enable panel synchronization';
+var LISTOFALLMEMBERS = 'List of all members';

@@ -9,8 +9,8 @@ var NAVTREEINDEX0 =
 "index.html#generating-and-viewing-documentation":[0,2],
 "index.html#how-to-run":[0,1],
 "index.html#setting-up-your-workspace":[0,0],
-"licence.html":[1],
 "main_8cpp.html":[2,0,0,0],
 "main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[2,0,0,0,0],
+"md_LICENCE.html":[1],
 "pages.html":[]
 };

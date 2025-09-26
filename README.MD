@@ -11,7 +11,7 @@ This project has a [.editorconfig file](https://editorconfig.org/) to enforce pr
 CLion has built-in support,
 VSCode requires [a plugin](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig).
 
-You can also use [clang-format](https://clang.llvm.org/docs/ClangFormat.html) instead.
+You can also use [clang-format](https://clang.llvm.org/docs/ClangFormat.html) instead. Uncomment the `include(ClangFormat)` line in the CMakeLists.txt file and delete the .editorconfig file. Add a `.clang-format` file to the root of the project if desired.
 
 ## How to run
 
